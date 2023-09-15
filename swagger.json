@@ -1,0 +1,239 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Practice",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/Register": {
+      "post": {
+        "summary": "Register a new user",
+        "description": "Create a new user with their name, email, and password.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "The user to create.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "User Successfully Registered"
+          },
+          "400": {
+            "description": "Bad Request (email already exists)"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "summary": "Register a new user",
+        "description": "Create a new user with their name, email, and password.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "The user to create.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "User Successfully Registered"
+          },
+          "400": {
+            "description": "Bad Request (email already exists)"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/Get All user": {
+      "post": {
+        "summary": "Register a new user",
+        "description": "Create a new user with their name, email, and password.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "The user to create.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "User Successfully Registered"
+          },
+          "400": {
+            "description": "Bad Request (email already exists)"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/Update user": {
+      "post": {
+        "summary": "Register a new user",
+        "description": "Create a new user with their name, email, and password.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "The user to create.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "User Successfully Registered"
+          },
+          "400": {
+            "description": "Bad Request (email already exists)"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/GetUser By ID": {
+      "post": {
+        "summary": "Register a new user",
+        "description": "Create a new user with their name, email, and password.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "The user to create.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "User Successfully Registered"
+          },
+          "400": {
+            "description": "Bad Request (email already exists)"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/DeleteUser by ID": {
+      "post": {
+        "summary": "Register a new user",
+        "description": "Create a new user with their name, email, and password.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "The user to create.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "User Successfully Registered"
+          },
+          "400": {
+            "description": "Bad Request (email already exists)"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {},
+  "tags": []
+}
