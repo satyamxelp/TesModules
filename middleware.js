@@ -1,25 +1,30 @@
 const jwt = require('jsonwebtoken');
-const { secretKey } = require('./config'); 
+const secretKey = 'satyamkumarsingh';
 
-const authenticationMiddleware = (req, res, next) => {
+// Define the authenticateUser function
+function authenticateUser(req, res, next) {
   const token = req.header('Authorization');
 
   if (!token) {
-    return res.status(401).json({ message: 'Unauthorized' });
+    return res.status(401).json({ message: 'Authentication failed. Token not provided.' });
   }
 
-  try {
-    const decoded = jwt.verify(token, secretKey);
+  jwt.verify(token, secretKey, (err, decoded) => {
+    if (err) {
+      console.error('Token Verification Error:', err);
+      if (err.name === 'JsonWebTokenError') {
+        return res.status(401).json({ message: 'Authentication failed. Invalid token.' });
+      } else if (err.name === 'TokenExpiredError') {
+        return res.status(401).json({ message: 'Authentication failed. Token expired.' });
+      } else {
+        return res.status(500).json({ message: 'Internal server error.' });
+      }
+    }
 
-    req.user = decoded.user;
-
+    req.user = decoded;
     next();
-  } catch (error) {
-    console.error(error);
-    res.status(401).json({ message: 'Token is invalid' });
-  }
-};
+  });
+}
 
-module.exports = {
-  authenticationMiddleware,
-};
+
+module.exports = { authenticateUser };
